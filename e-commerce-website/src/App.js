@@ -1,21 +1,11 @@
 import './App.css';
-<<<<<<< HEAD
-=======
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Results from './components/pages/Results.js';
-import Home from './components/pages/Home.js';
-import Navbar from './components/pages/NavBar.js';
-<<<<<<< HEAD
->>>>>>> d4449944b2caeed0e65cc61cec015f94ec2d9efd
+import Results from './components/pages/Results';
+import NavBar from './components/NavBar';
 import Home from './components/pages/Home'
-import React from 'react';
-<<<<<<< HEAD
-// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-=======
 
->>>>>>> 95e287d1b2e8be63c8b20bb55786515c222bd2c4
->>>>>>> d4449944b2caeed0e65cc61cec015f94ec2d9efd
+
 
 
 function App() {
@@ -29,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/results" element={<Results />} />
-          <Route path="/navbar" element={<Navbar />} />
+          <Route path="/navbar" element={<NavBar />} />
         </Routes>
       </Router>
     </div>
