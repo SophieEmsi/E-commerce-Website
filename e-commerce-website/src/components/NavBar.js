@@ -28,15 +28,18 @@ const Language = styled.div`
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgrey;
+//   border: 0.5px solid lightgrey;
   display: flex;
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  border-radius: 2px;
+  background-color:#f8f8f8;
 `;
 
 const Input = styled.input`
   border: none;
+  background-color:#f8f8f8;
 `;
 
 const Center = styled.div`
@@ -62,6 +65,7 @@ const NavItems = styled.div`
 const CustomBadge = styled(Badge)`
   .MuiBadge-badge {
     background-color: #E0FF00; 
+    color: #000000;
   }
 `;
 
@@ -70,19 +74,19 @@ const NavBar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language> EN </Language>
+          <Language className="font-medium"> EN </Language>
           <SearchContainer>
             <Input />
-            <SearchIcon />
+            <SearchIcon className="text-black-500 text-lg"/>
           </SearchContainer>
         </Left>
         <Center>
-          <img src={Logo} alt="Levels" className="h-15" />
+          <img src={Logo} alt="Levels Logo" className="h-15" />
         </Center>
         <Right>
-          <NavItems>CLOTHING</NavItems>
-          <NavItems>JEWELLERY</NavItems>
-          <NavItems>ELECTRONICS</NavItems>
+          <NavItems className="font-medium">CLOTHING</NavItems>
+          <NavItems className="font-medium">JEWELLERY</NavItems>
+          <NavItems className="font-medium">ELECTRONICS</NavItems>
           <NavItems className="mr-4">
             <CustomBadge color="secondary" badgeContent={0} showZero>
               <ShoppingCartIcon />
