@@ -115,10 +115,10 @@ const NavBar = () => {
           </a>
         </Center>
         <Right>
-          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
+          <NavItems onClick={() => handleCategoryClick("women's clothing")} className="font-medium">
             WOMEN CLOTHING
           </NavItems>
-          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
+          <NavItems onClick={() => handleCategoryClick("men's clothing")} className="font-medium">
             MEN CLOTHING
           </NavItems>
           <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">
@@ -127,11 +127,7 @@ const NavBar = () => {
           <NavItems onClick={() => handleCategoryClick('electronics')} className="font-medium">
             ELECTRONICS
           </NavItems>
-          <NavItems className="mr-4">
-            <CustomBadge color="secondary" badgeContent={0} showZero>
-              <ShoppingCartIcon />
-            </CustomBadge>
-          </NavItems>
+          {/* ... */}
         </Right>
       </Wrapper>
     </Container>
