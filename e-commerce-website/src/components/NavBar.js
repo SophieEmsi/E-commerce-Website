@@ -29,18 +29,17 @@ const Language = styled.div`
 `;
 
 const SearchContainer = styled.div`
-//   border: 0.5px solid lightgrey;
   display: flex;
   align-items: center;
   margin-left: 25px;
   padding: 5px;
   border-radius: 2px;
-  background-color:#f8f8f8;
+  background-color: #f8f8f8;
 `;
 
 const Input = styled.input`
   border: none;
-  background-color:#f8f8f8;
+  background-color: #f8f8f8;
 `;
 
 const Center = styled.div`
@@ -65,7 +64,7 @@ const NavItems = styled.div`
 
 const CustomBadge = styled(Badge)`
   .MuiBadge-badge {
-    background-color: #E0FF00; 
+    background-color: #e0ff00;
     color: #000000;
   }
 `;
@@ -74,32 +73,32 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        navigate('/results', { state: { results: data } });
-      })
-      .catch(error => console.log(error));
+    navigate(`/results/${category}`);
   };
 
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language className="font-medium"> EN </Language>
+          <Language className="font-medium">EN</Language>
           <SearchContainer>
             <Input />
-            <SearchIcon className="text-black-500 text-lg"/>
+            <SearchIcon className="text-black-500 text-lg" />
           </SearchContainer>
         </Left>
         <Center>
           <img src={Logo} alt="Levels Logo" className="h-15" />
         </Center>
         <Right>
-          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">CLOTHING</NavItems>
-          <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">JEWELLERY</NavItems>
-          <NavItems onClick={() => handleCategoryClick('electronics')} className="font-medium">ELECTRONICS</NavItems>
+          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
+            CLOTHING
+          </NavItems>
+          <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">
+            JEWELLERY
+          </NavItems>
+          <NavItems onClick={() => handleCategoryClick('electronics')} className="font-medium">
+            ELECTRONICS
+          </NavItems>
           <NavItems className="mr-4">
             <CustomBadge color="secondary" badgeContent={0} showZero>
               <ShoppingCartIcon />
