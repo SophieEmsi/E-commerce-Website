@@ -1,14 +1,15 @@
 import React from 'react';
+import 'tailwindcss/tailwind.css';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
 import Logo from '../components/assets/images/Logo4.png';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
+import Announcement from './Announcement'; 
 
 const Container = styled.div`
   height: 60px;
-  background-color: ;
 `;
 
 const Wrapper = styled.div`
@@ -57,28 +58,28 @@ const Right = styled.div`
 `;
 
 const NavItems = styled.div`
-font-size: 14px;
-cursor: pointer;
-margin-left: 25px;
-position: relative;
-transition: 0.3s ease;
-
-&:hover {
-  &:before {
-    width: 100%;
-  }
-}
-
-&:before {
-  content: '';
-  position: absolute;
-  background: #000;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 25px;
+  position: relative;
   transition: 0.3s ease;
-}
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    transition: 0.3s ease;
+  }
 `;
 
 const CustomBadge = styled(Badge)`
@@ -96,11 +97,12 @@ const NavBar = () => {
   };
 
   const handleLogoClick = () => {
-    navigate('/'); 
+    navigate('/');
   };
 
   return (
     <Container>
+      <Announcement /> 
       <Wrapper>
         <Left>
           <Language className="font-medium">EN</Language>
@@ -115,10 +117,10 @@ const NavBar = () => {
           </a>
         </Center>
         <Right>
-          <NavItems onClick={() => handleCategoryClick("women's clothing")} className="font-medium">
+          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
             WOMEN CLOTHING
           </NavItems>
-          <NavItems onClick={() => handleCategoryClick("men's clothing")} className="font-medium">
+          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
             MEN CLOTHING
           </NavItems>
           <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">
@@ -127,7 +129,11 @@ const NavBar = () => {
           <NavItems onClick={() => handleCategoryClick('electronics')} className="font-medium">
             ELECTRONICS
           </NavItems>
-          {/* ... */}
+          <NavItems className="mr-4">
+            <CustomBadge color="secondary" badgeContent={0} showZero>
+              <ShoppingCartIcon />
+            </CustomBadge>
+          </NavItems>
         </Right>
       </Wrapper>
     </Container>
