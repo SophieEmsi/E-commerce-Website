@@ -73,8 +73,16 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
-    navigate(`/results/${category}`);
+    let apiCategory;
+    if (category === "clothing" || category === "mens" || category === "womens") {
+      apiCategory = "clothing";
+    } else {
+      apiCategory = category;
+    }
+    navigate(`/results/${apiCategory.toLowerCase()}`);
   };
+  
+  
 
   const handleLogoClick = () => {
     navigate('/'); 
