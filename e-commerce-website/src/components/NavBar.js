@@ -76,6 +76,10 @@ const NavBar = () => {
     navigate(`/results/${category}`);
   };
 
+  const handleLogoClick = () => {
+    navigate('/'); 
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -87,7 +91,9 @@ const NavBar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <img src={Logo} alt="Levels Logo" className="h-15" />
+          <a href="/" onClick={handleLogoClick}>
+            <img src={Logo} alt="Levels Logo" className="h-15" />
+          </a>
         </Center>
         <Right>
           <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">

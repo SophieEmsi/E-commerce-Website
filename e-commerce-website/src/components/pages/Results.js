@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from '../NavBar';
+// import NavBar from '../NavBar';
 
 const Results = () => {
   const [results, setResults] = useState([]);
