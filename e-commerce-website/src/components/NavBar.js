@@ -57,9 +57,28 @@ const Right = styled.div`
 `;
 
 const NavItems = styled.div`
-  font-size: 14px;
-  cursor: pointer;
-  margin-left: 25px;
+font-size: 14px;
+cursor: pointer;
+margin-left: 25px;
+position: relative;
+transition: 0.3s ease;
+
+&:hover {
+  &:before {
+    width: 100%;
+  }
+}
+
+&:before {
+  content: '';
+  position: absolute;
+  background: #000;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  transition: 0.3s ease;
+}
 `;
 
 const CustomBadge = styled(Badge)`
