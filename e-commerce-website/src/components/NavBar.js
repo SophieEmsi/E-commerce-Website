@@ -97,7 +97,10 @@ const NavBar = () => {
         </Center>
         <Right>
           <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
-            CLOTHING
+            WOMEN CLOTHING
+          </NavItems>
+          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
+            MEN CLOTHING
           </NavItems>
           <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">
             JEWELLERY
