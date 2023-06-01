@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Logo from '../components/assets/images/Logo4.png';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   height: 60px;
@@ -70,6 +71,18 @@ const CustomBadge = styled(Badge)`
 `;
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    fetch(`https://fakestoreapi.com/products/category/${category}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        navigate('/results', { state: { results: data } });
+      })
+      .catch(error => console.log(error));
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -84,9 +97,9 @@ const NavBar = () => {
           <img src={Logo} alt="Levels Logo" className="h-15" />
         </Center>
         <Right>
-          <NavItems className="font-medium">CLOTHING</NavItems>
-          <NavItems className="font-medium">JEWELLERY</NavItems>
-          <NavItems className="font-medium">ELECTRONICS</NavItems>
+          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">CLOTHING</NavItems>
+          <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">JEWELLERY</NavItems>
+          <NavItems onClick={() => handleCategoryClick('electronics')} className="font-medium">ELECTRONICS</NavItems>
           <NavItems className="mr-4">
             <CustomBadge color="secondary" badgeContent={0} showZero>
               <ShoppingCartIcon />
