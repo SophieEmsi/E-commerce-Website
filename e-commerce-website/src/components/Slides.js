@@ -7,7 +7,7 @@ import { sliderItems } from "../SlidesInfo"
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  margin-top: 50px;
+  margin-top: 100px;
   width: 100%;
   height: 80vh;
   display: flex;
@@ -19,7 +19,7 @@ const Container = styled.div`
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: rgba(30, 32, 41, 0.74);
+  background-color: rgba(30, 32, 41, 0.74)  ;
   border-radius: 50%;
   display: flex;
   align-items: center;

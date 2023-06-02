@@ -9,7 +9,13 @@ import { useNavigate } from 'react-router-dom';
 import Announcement from './Announcement'; 
 
 const Container = styled.div`
-  height: 60px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 999;
 `;
 
 const Wrapper = styled.div`
