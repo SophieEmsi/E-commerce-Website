@@ -15,11 +15,11 @@ function Footer() {
         <a href="https://github.com/AsmaH5" target="_blank" rel="noopener noreferrer">
         <GitHubIcon />
         </a>
-        <a href="https://www.linkedin.com/in/asma-h-757b14155/" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/AsmaH5" target="_blank" rel="noopener noreferrer">
         <LinkedInIcon />
         </a>
       </div>
-      <p> &copy; 2023 ¦ Asma Hassan</p>
+      <p> &copy; 2023 ¦ LEVELS</p>
     </div>
     
   );
