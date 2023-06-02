@@ -19,7 +19,7 @@ const Container = styled.div`
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #fff7f7;
+  background-color: rgba(30, 32, 41, 0.74);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -30,10 +30,17 @@ const Arrow = styled.div`
   left: ${(props) => props.direction === "left" && "10px"};
   right: ${(props) => props.direction === "right" && "10px"};
   margin: auto;
+  margin-left: 40px;
+  margin-right: 40px;
   cursor: pointer;
-  opacity: 0.5;
   z-index: 2;
-  color: black;
+  color: white;
+
+  &:hover {
+    background-color: #e0ff00;
+    color: black;
+    border: none;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -131,7 +138,7 @@ const Slides = () => {
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
-        <NavigateBeforeIcon style={{ color: "black" }}/>
+        <NavigateBeforeIcon/>
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
@@ -152,7 +159,7 @@ const Slides = () => {
         ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
-        <NavigateNextIcon style={{ color: "black" }}/>
+        <NavigateNextIcon/>
       </Arrow>
     </Container>
   );
