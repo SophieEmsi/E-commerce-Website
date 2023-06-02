@@ -35,12 +35,12 @@ const SearchContainer = styled.div`
   margin-left: 25px;
   padding: 5px;
   border-radius: 2px;
-  background-color: #f8f8f8;
+  border: 1.5px solid #CBCBCB;
 `;
 
 const Input = styled.input`
   border: none;
-  background-color: #f8f8f8;
+
 `;
 
 const Center = styled.div`
@@ -73,7 +73,7 @@ const NavItems = styled.div`
   &:before {
     content: '';
     position: absolute;
-    background: #000;
+    background: #1E2029;
     width: 0;
     height: 2px;
     bottom: -2px;

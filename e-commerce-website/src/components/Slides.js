@@ -4,6 +4,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { useState } from "react";
 import { sliderItems } from "../SlidesInfo"
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   margin-top: 50px;
@@ -12,6 +13,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({ display: "none" })}
 `;
 
 const Arrow = styled.div`
@@ -81,7 +83,7 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 50px;
+  font-size: 40px;
   margin: 0;
 `;
 
@@ -93,7 +95,7 @@ const DescContainer = styled.div`
 
 const Desc = styled.p`
   margin: 50px 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 3px;
   margin: 0;
@@ -136,7 +138,6 @@ const Slides = () => {
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
-              {/* <Image src={item.img2} /> */}
             </ImgContainer>
             <InfoContainer>
                 <TitleContainer>
