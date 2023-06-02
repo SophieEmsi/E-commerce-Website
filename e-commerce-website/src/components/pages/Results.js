@@ -15,8 +15,15 @@ const Results = () => {
       .catch(error => console.log(error));
   }, [category]);
 
+  useEffect(() => {
+    document.body.style.marginTop = '80px'; 
+    return () => {
+      document.body.style.marginTop = ''; 
+    };
+  }, []);
+
   return (
-    <Container>
+    <Container className="mt-4">
       <Row>
         <Col>
           <h1>Results</h1>
@@ -39,6 +46,3 @@ const Results = () => {
 };
 
 export default Results;
-
-
-
