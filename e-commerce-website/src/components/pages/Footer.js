@@ -89,7 +89,7 @@ const Footer = () => {
               </p>
               <p className="mt-1">
                 <i className="fas fa-envelope me-3"></i>
-                info@happy-tummy.co.uk
+                info@Levels.com
               </p>
               <p className="mt-1">
                 <i className="fas fa-phone me-3"></i> + 44 141 496 0889
