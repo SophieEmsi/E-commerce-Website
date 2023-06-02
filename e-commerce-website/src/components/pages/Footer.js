@@ -43,17 +43,17 @@ const Footer = () => {
                   Men Clothing
                 </a>
               </p>
-              <p>
+              <p className="mt-1">
                 <a onClick={() => handleCategoryClick("WOMEN CLOTHING")} href="#!" >
                   Women Clothing
                 </a>
               </p>
-              <p>
+              <p className="mt-1">
                 <a onClick={() => handleCategoryClick('jewelery')} href="#!">
                   Jewellery
                 </a>
               </p>
-              <p>
+              <p className="mt-1">
                 <a onClick={() => handleCategoryClick('electronics')} href="#!">
                   Electronics
                 </a>
@@ -68,13 +68,13 @@ const Footer = () => {
               <p>
                 <a href="./index.html#about-section" className="text-reset">About Us</a>
               </p>
-              <p>
+              <p className="mt-1">
                 <a href="./index.html#about-section" className="text-reset">Privacy Policy</a>
               </p>
-              <p>
+              <p className="mt-1">
                 <a href="./index.html#about-section" className="text-reset">Cookies Policy</a>
               </p>
-              <p>
+              <p className="mt-1">
                 <a href="./index.html#about-section" className="text-reset">Terms & Conditions</a>
               </p>
             </div>
@@ -87,14 +87,14 @@ const Footer = () => {
               <p>
                 <i className="fas fa-home me-3"></i> Birmingham, B5 5SY, UK
               </p>
-              <p>
+              <p className="mt-1">
                 <i className="fas fa-envelope me-3"></i>
                 info@happy-tummy.co.uk
               </p>
-              <p>
+              <p className="mt-1">
                 <i className="fas fa-phone me-3"></i> + 44 141 496 0889
               </p>
-              <p>
+              <p className="mt-1">
                 <i className="fas fa-print me-3"></i> + 44 141 496 0888
               </p>
             </div>
