@@ -99,7 +99,13 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
-    navigate(`/results/${category}`);
+    let apiCategory = category.toLowerCase();
+    if (apiCategory === "women clothing") {
+      apiCategory = "women's clothing";
+    } else if (apiCategory === "men clothing") {
+      apiCategory = "men's clothing";
+    }
+    navigate(`/results/${apiCategory}`);
   };
 
   const handleLogoClick = () => {
@@ -123,12 +129,13 @@ const NavBar = () => {
           </a>
         </Center>
         <Right>
-          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
-            WOMEN CLOTHING
-          </NavItems>
-          <NavItems onClick={() => handleCategoryClick('clothing')} className="font-medium">
-            MEN CLOTHING
-          </NavItems>
+        <NavItems onClick={() => handleCategoryClick("WOMEN CLOTHING")} className="font-medium">
+  WOMEN CLOTHING
+</NavItems>
+<NavItems onClick={() => handleCategoryClick("MEN CLOTHING")} className="font-medium">
+  MEN CLOTHING
+</NavItems>
+
           <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">
             JEWELLERY
           </NavItems>
