@@ -5,8 +5,7 @@ import Results from './components/pages/Results';
 import NavBar from './components/NavBar';
 import Home from './components/pages/Home';
 import Footer from './components/pages/Footer';
-
-
+import Cart from './components/pages/Cart';
 
 function App() {
   return (
@@ -16,11 +15,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/results/:category" element={<Results />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </div>
     </Router>  
-
   );
 }
 

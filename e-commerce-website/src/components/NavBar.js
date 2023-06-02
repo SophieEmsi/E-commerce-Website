@@ -112,6 +112,10 @@ const NavBar = () => {
     navigate('/');
   };
 
+  const handleCartClick = () => {
+    navigate('/cart');
+  };
+
   return (
     <Container>
       <Announcement /> 
@@ -142,7 +146,7 @@ const NavBar = () => {
           <NavItems onClick={() => handleCategoryClick('electronics')} className="font-medium">
             ELECTRONICS
           </NavItems>
-          <NavItems className="mr-4">
+          <NavItems href="/cart" onClick={handleCartClick} className="mr-4">
             <CustomBadge color="secondary" badgeContent={0} showZero>
               <ShoppingCartIcon />
             </CustomBadge>
