@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  height: 30px;
+  height: 25px;
+  font-size: 1.0em;
+  letter-spacing: 0.1em;
   background-color: #e0ff00;
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 const Announcement = () => {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from '../NavBar';
 import { useParams } from 'react-router-dom';
 
 const Results = () => {
