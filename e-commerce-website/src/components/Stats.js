@@ -13,7 +13,7 @@ const stats = [
   {
     id: 2,
     name: 'Offsetting carbon emissions through carbon-neutral packaging for a sustainable future',
-    value: 'Commitment to Sustainability',
+    value: 'Sustainability Commitment',
     icon: <RecyclingIcon fontSize="large" />,
   },
   {
@@ -28,7 +28,7 @@ export default function Example() {
   return (
     <div className="bg-white py-12 sm:py-20">
       <div className="mx-auto max-w-7xl">
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:gap-y-6 text-center lg:grid-cols-3">
+        <dl className="grid grid-cols-1 gap-x-14 gap-y-4 sm:gap-y-6 text-center lg:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.id} className="mx-auto flex flex-col items-center">
               <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
