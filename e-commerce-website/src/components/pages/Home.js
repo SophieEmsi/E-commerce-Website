@@ -4,6 +4,7 @@ import Slides from '../Slides';
 // import NavBar from '../NavBar';
 import Cart from './Cart';
 import Stats from '../Stats';
+import Collections from '../Collections';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
 
       <Slides />
       <Stats />
+      <Collections />
 
     </div>
   );
