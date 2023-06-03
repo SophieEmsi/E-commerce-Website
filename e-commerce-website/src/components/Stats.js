@@ -26,16 +26,16 @@ const stats = [
 
 export default function Example() {
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+    <div className="bg-white py-12 sm:py-20">
+      <div className="mx-auto max-w-7xl">
+        <dl className="grid grid-cols-1 gap-x-8 gap-y-4 sm:gap-y-6 text-center lg:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.id} className="mx-auto flex flex-col items-center">
               <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
                 {stat.value}
               </dd>
-              <div className="mt-4">{stat.icon}</div>
+              <div className="mt-1">{stat.icon}</div>
             </div>
           ))}
         </dl>
@@ -43,3 +43,4 @@ export default function Example() {
     </div>
   );
 }
+
