@@ -1,8 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 60px;
+  margin-bottom: 15px;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 25px;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+`;
 
 const Results = () => {
   const [results, setResults] = useState([]);
@@ -33,10 +52,10 @@ const Results = () => {
                   <img className="max-h-[160px] hover:scale-110" src={result.image} alt={result.title} />
                 </div>
               </div>
-              <Card.Body>
+              <Card.Body className='ml-5'>
                 <Card.Title>{result.title}</Card.Title>
-                <Card.Text>{result.price}</Card.Text>
-                <Button className='mt-4 mb-4' variant="primary">Add to Cart</Button>
+                <Card.Text className='mt-4 text-lg'>£{result.price}</Card.Text>
+                <StyledButton>Add to Cart</StyledButton>
               </Card.Body>
             </Card>
           </Col>
