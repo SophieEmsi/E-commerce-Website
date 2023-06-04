@@ -16,30 +16,31 @@ const Results = () => {
   }, [category]);
 
   useEffect(() => {
-    document.body.style.marginTop = '80px'; 
+    document.body.style.marginTop = '160px';
     return () => {
-      document.body.style.marginTop = ''; 
+      document.body.style.marginTop = '';
     };
   }, []);
 
   return (
-    <Container className="mt-4">
+    <Container className="mb-9">
       <Row>
-        <Col>
-          <h1>Results</h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {results.map(result => (
-              <Card key={result.id} className="shadow-lg">
-                <Card.Img variant="top" src={result.image} />
-                <Card.Body>
-                  <Card.Title>{result.title}</Card.Title>
-                  <Card.Text>{result.price}</Card.Text>
-                  <Button variant="primary">Add to Cart</Button>
-                </Card.Body>
-              </Card>
-            ))}
-          </div>
-        </Col>
+        {results.map(result => (
+          <Col className='mb-4' key={result.id} xs={12} sm={6} md={3} lg={3} xl={3}>
+            <Card className="shadow-lg" style={{ height: '100%' }}>
+              <div className="mt-4 mb-4 w-full h-full flex justify-center items-center">
+                <div className="w-[200px] mx-auto flex justify-center items-center">
+                  <img className="max-h-[160px] hover:scale-110" src={result.image} alt={result.title} />
+                </div>
+              </div>
+              <Card.Body>
+                <Card.Title>{result.title}</Card.Title>
+                <Card.Text>{result.price}</Card.Text>
+                <Button className='mt-4 mb-4' variant="primary">Add to Cart</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
