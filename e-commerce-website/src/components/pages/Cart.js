@@ -7,6 +7,8 @@ import { CartContext } from "./CartContext";
 
 const Container = styled.div`
     margin-top: 120px;
+    margin-left: 30px;
+    margin-right: 30px;
 `;
 
 const Wrapper = styled.div`
@@ -54,6 +56,7 @@ const Bottom = styled.div`
 
 const Info = styled.div`
   flex: 3;
+  margin-top: 15px;
 `;
 
 const Product = styled.div`
@@ -65,6 +68,8 @@ const Product = styled.div`
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
 `;
 
 const Image = styled.img`
@@ -126,7 +131,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  height: 55vh;
 `;
 
 const SummaryTitle = styled.h1`
