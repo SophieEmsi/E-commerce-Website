@@ -74,7 +74,7 @@ const ProductDetail = styled.div`
 `;
 
 const Image = styled.img`
-  width: 200px;
+  width: 120px;
 `;
 
 const Details = styled.div`
@@ -158,6 +158,7 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
 `;
+
 
 const Cart = () => {
   const { cartItems } = useContext(CartContext);
