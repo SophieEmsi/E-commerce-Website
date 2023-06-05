@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import styled from 'styled-components';
+import { CartContext } from './CartContext';
 
 const StyledButton = styled.button`
   padding: 10px;
@@ -26,6 +27,7 @@ const StyledButton = styled.button`
 const Results = () => {
   const [results, setResults] = useState([]);
   const { category } = useParams();
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -41,6 +43,10 @@ const Results = () => {
     };
   }, []);
 
+  const handleAddToCart = (item) => {
+    addToCart(item);
+  };
+
   return (
     <Container className="mb-9">
       <Row>
@@ -55,7 +61,7 @@ const Results = () => {
               <Card.Body className='ml-5'>
                 <Card.Title>{result.title}</Card.Title>
                 <Card.Text className='mt-4 text-lg'>£{result.price}</Card.Text>
-                <StyledButton>Add to Cart</StyledButton>
+                <StyledButton onClick={() => handleAddToCart(result)}>Add to Cart</StyledButton>
               </Card.Body>
             </Card>
           </Col>

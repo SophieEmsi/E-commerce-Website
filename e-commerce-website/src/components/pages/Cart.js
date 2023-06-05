@@ -1,11 +1,12 @@
-
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Add from '@mui/icons-material/AddSharp';
 import Remove from '@mui/icons-material/RemoveSharp';
 import { mobile } from "./responsive";
+import { CartContext } from "./CartContext";
 
 const Container = styled.div`
-    margin-top 120px;
+    margin-top: 120px;
 `;
 
 const Wrapper = styled.div`
@@ -38,6 +39,7 @@ const TopButton = styled.button`
 const TopTexts = styled.div`
   ${mobile({ display: "none" })}
 `;
+
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -48,7 +50,6 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
-
 `;
 
 const Info = styled.div`
@@ -155,6 +156,22 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const { cartItems } = useContext(CartContext);
+  console.log(cartItems);
+
+  const subtotal = cartItems.reduce((total, item) => {
+    console.log(item.price, item.quantity);
+    return total + Number(item.price) * Number(item.quantity);
+  }, 0);
+  
+  console.log(subtotal);
+
+  const shipping = 5.90;
+
+  const total = subtotal + shipping;
+
+  console.log(total); 
+
   return (
     <Container>
       <Wrapper>
@@ -162,82 +179,54 @@ const Cart = () => {
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Shopping Bag({cartItems.length})</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetail>
-                <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> JESSIE THUNDER SHOES
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    <b>Size:</b> 37.5
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 30</ProductPrice>
-              </PriceDetail>
-            </Product>
-            <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> HAKURA T-SHIRT
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="gray" />
-                  <ProductSize>
-                    <b>Size:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 20</ProductPrice>
-              </PriceDetail>
-            </Product>
+            {cartItems.map((item) => (
+              <Product key={item.id}>
+                <ProductDetail>
+                  <Image src={item.image} />
+                  <Details>
+                    <ProductName>
+                      <b>Product:</b> {item.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>ID:</b> {item.id}
+                    </ProductId>
+                    <ProductColor color={item.color} />
+                    <ProductSize>
+                      <b>Size:</b> {item.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{item.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>$ {item.price}</ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {subtotal.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>$ {shipping.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ 80</SummaryItemPrice>
+              <SummaryItemPrice>$ {total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <Button>CHECKOUT NOW</Button>
           </Summary>
@@ -248,3 +237,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
