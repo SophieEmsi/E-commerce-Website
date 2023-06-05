@@ -166,7 +166,7 @@ const Cart = () => {
   
   console.log(subtotal);
 
-  const shipping = 5.90;
+  const shipping = 3.50;
 
   const total = subtotal + shipping;
 
@@ -209,7 +209,7 @@ const Cart = () => {
                     <ProductAmount>{item.quantity}</ProductAmount>
                     <Remove />
                   </ProductAmountContainer>
-                  <ProductPrice>$ {item.price}</ProductPrice>
+                  <ProductPrice>£ {item.price}</ProductPrice>
                 </PriceDetail>
               </Product>
             ))}
@@ -218,15 +218,15 @@ const Cart = () => {
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>$ {subtotal.toFixed(2)}</SummaryItemPrice>
+              <SummaryItemPrice>£ {subtotal.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice>$ {shipping.toFixed(2)}</SummaryItemPrice>
+              <SummaryItemPrice>£ {shipping.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>$ {total.toFixed(2)}</SummaryItemPrice>
+              <SummaryItemPrice>£ {total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <Button>CHECKOUT NOW</Button>
           </Summary>
