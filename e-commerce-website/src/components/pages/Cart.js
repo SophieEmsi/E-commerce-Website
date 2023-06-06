@@ -177,8 +177,9 @@ const SummaryItemPrice = styled.span``;
 const Button = styled.button`
   width: 100%;
   padding: 10px;
-  border: 2px solid black;
-  color: black;
+  // border: 2px solid black;
+  background-color: rgba(30, 32, 41, 0.87);
+  color: white;
   font-weight: 600;
 
   &:hover {
