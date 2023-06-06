@@ -109,7 +109,7 @@ const CircleContainer = styled.div`
 const Circle = styled.div`
   width: ${(props) => (props.isActive ? "18px" : "12px")};
   height: ${(props) => (props.isActive ? "18px" : "12px")};
-  background-color: ${(props) => (props.isActive ? "#e0ff00" : "rgba(203, 203, 203, 0.84)")};
+  background-color: ${(props) => (props.isActive ? "#e0ff00" : "rgba(30, 32, 41, 0.81)")};
   border-radius: 50%;
   margin: 0 6px;
   cursor: pointer;
