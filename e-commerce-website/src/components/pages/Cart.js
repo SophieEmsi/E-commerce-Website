@@ -6,9 +6,9 @@ import { mobile } from "./responsive";
 import { CartContext } from "./CartContext";
 
 const Container = styled.div`
-    margin-top: 120px;
-    margin-left: 30px;
-    margin-right: 30px;
+  margin-top: 120px;
+  margin-left: 30px;
+  margin-right: 30px;
 `;
 
 const Wrapper = styled.div`
@@ -122,12 +122,6 @@ const ProductPrice = styled.div`
   ${mobile({ marginBottom: "20px" })}
 `;
 
-// const Hr = styled.hr`
-//   background-color: #eee;
-//   border: none;
-//   height: 1px;
-// `;
-
 const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
@@ -160,23 +154,17 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-
 const Cart = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, increaseQuantity, decreaseQuantity } = useContext(CartContext);
   console.log(cartItems);
 
   const subtotal = cartItems.reduce((total, item) => {
-    console.log(item.price, item.quantity);
     return total + Number(item.price) * Number(item.quantity);
   }, 0);
-  
-  console.log(subtotal);
 
   const shipping = 3.50;
 
   const total = subtotal + shipping;
-
-  console.log(total); 
 
   return (
     <Container>
@@ -208,9 +196,9 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <Remove onClick={() => decreaseQuantity(item.id)} />
                     <ProductAmount>{item.quantity}</ProductAmount>
-                    <Remove />
+                    <Add onClick={() => increaseQuantity(item.id)} />
                   </ProductAmountContainer>
                   <ProductPrice>£ {item.price}</ProductPrice>
                 </PriceDetail>
@@ -240,6 +228,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-
-
