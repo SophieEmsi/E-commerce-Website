@@ -4,10 +4,10 @@ import { sliderItems } from "../SlidesInfo";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  margin-top: 100px;
-  margin-bottom: 20px;
+  margin-top: 90px;
+  margin-bottom: 10px;
   width: 100%;
-  height: 80vh;
+  height: 88vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -15,6 +15,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  margin-top: 60px;
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
@@ -36,12 +37,14 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 `;
 
 const Image = styled.img`
-  height: 90%;
+  height: 100%;
+  width: 70%;
 `;
+
 
 const InfoContainer = styled.div`
   position: absolute;

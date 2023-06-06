@@ -61,12 +61,12 @@ const callouts = [
     };
   
     return (
-    <div className="bg-white mb-3">
+    <div className="bg-white mb-2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-5 sm:py-24 lg:max-w-none lg:py-32">
-          <h2 className="text-3xl font-bold text-center mb-5 text-gray-900">Collections</h2>
+          <h2 className="text-3xl font-bold text-center mb-4 text-gray-900">Collections</h2>
 
-          <div className="mt-6 space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0">
+          <div className="space-y-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:space-y-0">
             {data &&
               callouts.map((callout, index) => (
                 <div

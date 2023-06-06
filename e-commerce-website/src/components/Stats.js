@@ -31,7 +31,7 @@ export default function Example() {
         <dl className="grid grid-cols-1 gap-x-14 gap-y-4 sm:gap-y-6 text-center lg:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.id} className="mx-auto flex flex-col items-center">
-              <dt className="text-base leading-7 text-gray-700">{stat.name}</dt>
+              <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
               <dd className="mb-3 order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
                 {stat.value}
               </dd>
