@@ -5,6 +5,7 @@ import Remove from '@mui/icons-material/RemoveSharp';
 import { mobile } from "./responsive";
 import { CartContext } from "./CartContext";
 import { useNavigate } from 'react-router-dom';
+import Cards from '../assets/images/payment.png'
 
 const Container = styled.div`
   margin-top: 120px;
@@ -17,16 +18,23 @@ const Wrapper = styled.div`
   ${mobile({ padding: "10px" })}
 `;
 
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+`;
+
 const Title = styled.h1`
-  font-weight: 300;
-  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  text-align: left;
 `;
 
 const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
   margin-bottom: 20px;
 `;
 
@@ -34,18 +42,16 @@ const SecondButton = styled.button`
   padding: 10px;
   font-size: 18px;
   font-weight: 600;
-  background-color: white;
+  background-color: #018849;
   cursor: pointer;
   margin-top: 50px;
   margin-bottom: 15px;
-  color: black;
-  border: 2px solid black;
+  color: white;
   padding: 10px 20px;
 
   &:hover {
-    background-color: black;
-    color: white;
-    border: none;
+    background-color: #036B3A;
+
   }
 `;
 
@@ -61,7 +67,7 @@ const FirstButton = styled.button`
   padding: 10px 20px;
 
   &:hover {
-    background-color: white;
+    background-color: 036B3A;
     color: black;
     border: none;
   }
@@ -178,12 +184,12 @@ const Button = styled.button`
   width: 100%;
   padding: 10px;
   // border: 2px solid black;
-  background-color: rgba(30, 32, 41, 0.87);
+  background-color: #018849;
   color: white;
   font-weight: 600;
 
   &:hover {
-    background-color: black;
+    background-color: #036B3A;
     color: white;
     border: none;
   }
@@ -210,7 +216,9 @@ const Cart = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>YOUR BAG</Title>
+        <TitleContainer>
+            <Title>YOUR BAG</Title>
+        </TitleContainer>
         <Top>
           <a href="/" onClick={handleButtonClick}>
             <FirstButton>CONTINUE SHOPPING</FirstButton>
@@ -263,6 +271,10 @@ const Cart = () => {
               <SummaryItemPrice>£ {total.toFixed(2)}</SummaryItemPrice>
             </SummaryItem>
             <Button>CHECKOUT NOW</Button>
+            <div className="mt-3">
+              <h3 className="mb-2 font-medium">WE ACCEPT:</h3>
+              <img src={Cards} alt="Type of payment icons" className="h-15" />
+            </div>
           </Summary>
         </Bottom>
       </Wrapper>
