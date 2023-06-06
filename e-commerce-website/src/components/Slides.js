@@ -36,6 +36,7 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 const Image = styled.img`
@@ -102,7 +103,6 @@ const CircleContainer = styled.div`
   width: 100%;
 `;
 
-
 const Circle = styled.div`
   width: ${(props) => (props.isActive ? "18px" : "12px")};
   height: ${(props) => (props.isActive ? "18px" : "12px")};
@@ -137,7 +137,7 @@ const Slides = () => {
   return (
     <Container>
       <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item, index) => (
+        {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
