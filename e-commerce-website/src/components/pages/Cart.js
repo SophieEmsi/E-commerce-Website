@@ -4,6 +4,7 @@ import Add from '@mui/icons-material/AddSharp';
 import Remove from '@mui/icons-material/RemoveSharp';
 import { mobile } from "./responsive";
 import { CartContext } from "./CartContext";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   margin-top: 120px;
@@ -29,14 +30,41 @@ const Top = styled.div`
   margin-bottom: 20px;
 `;
 
-const TopButton = styled.button`
+const SecondButton = styled.button`
   padding: 10px;
+  font-size: 18px;
   font-weight: 600;
+  background-color: white;
   cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
-  background-color: ${(props) =>
-    props.type === "filled" ? "black" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
+  margin-top: 50px;
+  margin-bottom: 15px;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+`;
+
+const FirstButton = styled.button`
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: black;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  color: white;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border: none;
+  }
 `;
 
 const TopTexts = styled.div`
@@ -149,12 +177,20 @@ const SummaryItemPrice = styled.span``;
 const Button = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: black;
-  color: white;
+  border: 2px solid black;
+  color: black;
   font-weight: 600;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: none;
+  }
 `;
 
 const Cart = () => {
+  const navigate = useNavigate();
+  
   const { cartItems, increaseQuantity, decreaseQuantity } = useContext(CartContext);
   console.log(cartItems);
 
@@ -166,17 +202,23 @@ const Cart = () => {
 
   const total = subtotal + shipping;
 
+  const handleButtonClick = () => {
+    navigate('/');
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <a href="/" onClick={handleButtonClick}>
+            <FirstButton>CONTINUE SHOPPING</FirstButton>
+          </a>
           <TopTexts>
             <TopText>Shopping Bag({cartItems.length})</TopText>
             <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          <SecondButton>CHECKOUT NOW</SecondButton>
         </Top>
         <Bottom>
           <Info>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { sliderItems } from "../SlidesInfo";
 import { mobile } from "../responsive";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   margin-top: 90px;
@@ -123,6 +124,20 @@ const Circle = styled.div`
 
 
 const Slides = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    let apiCategory = category.toLowerCase();
+    if (apiCategory === "women clothing") {
+      apiCategory = "women's clothing";
+    } else if (apiCategory === "men clothing") {
+      apiCategory = "men's clothing";
+    } else if (apiCategory === "jewellery") {
+      apiCategory = "jewelry";
+    }
+    navigate(`/results/${apiCategory}`);
+  };
+
   const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
@@ -152,21 +167,20 @@ const Slides = () => {
               <DescContainer>
                 <Desc>{item.desc}</Desc>
               </DescContainer>
-              <Button>SHOP NOW</Button>
+              <Button onClick={() => handleCategoryClick(item.collection)}>SHOP NOW</Button>
             </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
       <CircleContainer>
         {sliderItems.map((_, index) => (
-        <Circle
-        key={index}
-        isActive={index === slideIndex}
-        onClick={() => handleSlideClick(index)}
-        />
+          <Circle
+            key={index}
+            isActive={index === slideIndex}
+            onClick={() => handleSlideClick(index)}
+          />
         ))}
-    </CircleContainer>
-
+      </CircleContainer>
     </Container>
   );
 };
