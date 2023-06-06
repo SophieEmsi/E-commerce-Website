@@ -1,46 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { useState } from "react";
-import { sliderItems } from "../SlidesInfo"
+import { sliderItems } from "../SlidesInfo";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
   margin-top: 100px;
+  margin-bottom: 20px;
   width: 100%;
   height: 80vh;
   display: flex;
   position: relative;
   overflow: hidden;
   ${mobile({ display: "none" })}
-`;
-
-const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: rgba(30, 32, 41, 0.4)  ;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
-  margin: auto;
-  margin-left: 40px;
-  margin-right: 40px;
-  cursor: pointer;
-  z-index: 2;
-  color: white;
-
-  &:hover {
-    background-color: #e0ff00;
-    color: black;
-    border: none;
-  }
 `;
 
 const Wrapper = styled.div`
@@ -69,8 +40,6 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 90%;
-  
-  
 `;
 
 const InfoContainer = styled.div`
@@ -125,42 +94,76 @@ const Button = styled.button`
   }
 `;
 
+const CircleContainer = styled.div`
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`;
+
+
+const Circle = styled.div`
+  width: ${(props) => (props.isActive ? "18px" : "12px")};
+  height: ${(props) => (props.isActive ? "18px" : "12px")};
+  background-color: ${(props) => (props.isActive ? "#e0ff00" : "rgba(203, 203, 203, 0.84)")};
+  border-radius: 50%;
+  margin: 0 6px;
+  cursor: pointer;
+  box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #e0ff00;
+  }
+`;
+
+
 const Slides = () => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-    } else {
-      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
-    }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideIndex((prevIndex) => (prevIndex + 1) % sliderItems.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleSlideClick = (index) => {
+    setSlideIndex(index);
   };
 
   return (
-    <Container >
-      <Arrow className='drop-shadow-2xl' direction="left" onClick={() => handleClick("left")}>
-        <NavigateBeforeIcon />
-      </Arrow>
+    <Container>
       <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
+        {sliderItems.map((item, index) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
               <Image src={item.img} />
             </ImgContainer>
             <InfoContainer>
-                <TitleContainer>
-                    <Title>{item.title}</Title>
-                </TitleContainer>
-                <DescContainer>
-                    <Desc>{item.desc}</Desc>
+              <TitleContainer>
+                <Title>{item.title}</Title>
+              </TitleContainer>
+              <DescContainer>
+                <Desc>{item.desc}</Desc>
               </DescContainer>
               <Button>SHOP NOW</Button>
             </InfoContainer>
           </Slide>
         ))}
       </Wrapper>
-      <Arrow className='drop-shadow-2xl' direction="right" onClick={() => handleClick("right")}>
-        <NavigateNextIcon/>
-      </Arrow>
+      <CircleContainer>
+        {sliderItems.map((_, index) => (
+        <Circle
+        key={index}
+        isActive={index === slideIndex}
+        onClick={() => handleSlideClick(index)}
+        />
+        ))}
+    </CircleContainer>
+
     </Container>
   );
 };
