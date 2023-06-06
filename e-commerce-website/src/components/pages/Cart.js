@@ -67,9 +67,8 @@ const FirstButton = styled.button`
   padding: 10px 20px;
 
   &:hover {
-    background-color: 036B3A;
+    background-color: white;
     color: black;
-    border: none;
   }
 `;
 
