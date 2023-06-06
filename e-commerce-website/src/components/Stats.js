@@ -27,7 +27,7 @@ const stats = [
 export default function Example() {
   return (
     <div className="bg-gradient-to-r from-teal-200 to-lime-200 py-3 sm:py-1">
-      <div className="mt-3 mb-3 mx-auto max-w-7xl">
+      <div className="mt-3 mb-2 mx-auto max-w-7xl">
         <dl className="grid grid-cols-1 gap-x-14 gap-y-4 sm:gap-y-6 text-center lg:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.id} className="mx-auto flex flex-col items-center">
