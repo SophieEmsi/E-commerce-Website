@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import 'tailwindcss/tailwind.css';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,6 +7,7 @@ import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
 import Announcement from './Announcement'; 
+import { CartContext } from "./pages/CartContext";
 
 const Container = styled.div`
   height: 100px;
@@ -116,6 +117,8 @@ const NavBar = () => {
     navigate('/cart');
   };
 
+  const { cartItems } = useContext(CartContext);
+
   return (
     <Container>
       <Announcement /> 
@@ -147,9 +150,11 @@ const NavBar = () => {
             ELECTRONICS
           </NavItems>
           <NavItems href="/cart" onClick={handleCartClick} className="mr-4">
-            <CustomBadge color="secondary" badgeContent={0} showZero>
-              <ShoppingCartIcon />
+            <CustomBadge color="secondary" badgeContent={cartItems.length} showZero>
+            <ShoppingCartIcon />
             </CustomBadge>
+
+              
           </NavItems>
         </Right>
       </Wrapper>
