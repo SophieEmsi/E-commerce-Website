@@ -30,6 +30,12 @@ const Title = styled.h1`
   font-size: 25px;
   text-align: left;
 `;
+const SummeryLine = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+`;
 
 const Top = styled.div`
   display: flex;
@@ -164,7 +170,7 @@ const Summary = styled.div`
 `;
 
 const SummaryTitle = styled.h1`
-  font-weight: 200;
+  font-weight: 500;
 `;
 
 const SummaryItem = styled.div`
@@ -256,7 +262,9 @@ const Cart = () => {
             ))}
           </Info>
           <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummeryLine>
+              <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            </SummeryLine>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
               <SummaryItemPrice>£ {subtotal.toFixed(2)}</SummaryItemPrice>
