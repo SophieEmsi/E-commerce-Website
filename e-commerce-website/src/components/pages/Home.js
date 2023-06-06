@@ -5,14 +5,15 @@ import Slides from '../Slides';
 import Cart from './Cart';
 import Stats from '../Stats';
 import Collections from '../Collections';
+import Banner from '../Banner';
 
 const Home = () => {
   return (
     <div>
-
       <Slides />
       <Stats />
       <Collections />
+      <Banner/>
 
     </div>
   );

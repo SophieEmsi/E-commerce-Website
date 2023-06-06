@@ -136,9 +136,9 @@ const Slides = () => {
   };
 
   return (
-    <Container>
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <NavigateBeforeIcon/>
+    <Container >
+      <Arrow className='drop-shadow-2xl' direction="left" onClick={() => handleClick("left")}>
+        <NavigateBeforeIcon />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
@@ -158,7 +158,7 @@ const Slides = () => {
           </Slide>
         ))}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
+      <Arrow className='drop-shadow-2xl' direction="right" onClick={() => handleClick("right")}>
         <NavigateNextIcon/>
       </Arrow>
     </Container>

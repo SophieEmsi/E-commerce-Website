@@ -26,13 +26,13 @@ const stats = [
 
 export default function Example() {
   return (
-    <div className="bg-white py-12 sm:py-20">
-      <div className="mx-auto max-w-7xl">
+    <div className="bg-gradient-to-r from-teal-200 to-lime-200 py-3 sm:py-1">
+      <div className="mt-3 mb-3 mx-auto max-w-7xl">
         <dl className="grid grid-cols-1 gap-x-14 gap-y-4 sm:gap-y-6 text-center lg:grid-cols-3">
           {stats.map((stat) => (
             <div key={stat.id} className="mx-auto flex flex-col items-center">
-              <dt className="text-base leading-7 text-gray-600">{stat.name}</dt>
-              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+              <dt className="text-base leading-7 text-gray-700">{stat.name}</dt>
+              <dd className="mb-3 order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
                 {stat.value}
               </dd>
               <div className="mt-1">{stat.icon}</div>
