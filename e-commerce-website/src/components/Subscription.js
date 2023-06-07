@@ -8,21 +8,6 @@ const SubscriptionForm = () => {
   const subscribeHandler = (e) => {
     e.preventDefault();
     subscribeButton.current.className = 'subscription done';
-    //setVal(e.target.value)
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    setTimeout(() => {
-      setIsLoading(false);
-      setIsComplete(true);
-
-      setTimeout(() => {
-        setIsComplete(false);
-      }, 3000);
-    }, 2000);
   };
 
   return (
