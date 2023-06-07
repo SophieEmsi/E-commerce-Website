@@ -1,8 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, {useRef } from 'react';
 
 const SubscriptionForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isComplete, setIsComplete] = useState(false);
   const subscribeButton = useRef();
 
   const subscribeHandler = (e) => {
