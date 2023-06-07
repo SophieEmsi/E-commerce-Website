@@ -6,6 +6,7 @@ import Slides from '../Slides';
 import Stats from '../Stats';
 import Collections from '../Collections';
 import Banner from '../Banner';
+import SubscriptionForm from '../Subscription'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Stats />
       <Collections />
       <Banner/>
+      <SubscriptionForm />
 
     </div>
   );

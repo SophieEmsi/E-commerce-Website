@@ -15,7 +15,7 @@ export default function Banner() {
         <h2 className="text-4xl font-bold text-center text-gray-900">UP TO 50% OFF SELECTED ITEMS!</h2>
         <h3 className="text-xl text-center text-gray-900 mt-3">Limited time only. </h3>
       </div>
-      <span className="d-block my-3 text-center">Subscribe to our newsletter in order not to miss new arrivals promotions and discounts of our store</span>
+      {/* <span className="d-block my-3 text-center">Subscribe to our newsletter in order not to miss new arrivals promotions and discounts of our store</span>
 
 <div className="content">
   <form className="subscription" ref={subscribeButton}>
@@ -25,7 +25,7 @@ export default function Banner() {
       <span className="after-submit">Thank you for subscribing!</span>
     </button>
   </form>
-</div>
-    </div>
+</div> */}
+  </div>
   );
 }
