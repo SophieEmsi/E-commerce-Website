@@ -1,4 +1,4 @@
-import React, {useRef } from 'react';
+import React, { useRef } from 'react';
 
 const SubscriptionForm = () => {
   const subscribeButton = useRef();
@@ -10,7 +10,7 @@ const SubscriptionForm = () => {
 
   return (
     <div className="flex justify-center m-5">
-      <div className="hover:border-dashed border-8 border-t-indigo-400 border-r-sky-400 border-b-emerald-400 border-l-amber-400 h-70 w-3/5">
+      <div className="hover:border-dashed border-8 border-t-indigo-400 border-r-sky-400 border-b-emerald-400 border-l-amber-400 sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-3/5">
         <div className="container-subscribe flex flex-col items-center justify-center">
           <h5 className="mt-5 mb-4 text-center font-semibold text-xl tracking-wider">NEW USERS ONLY:</h5>
           <div className="mt-2 mb-4 flex justify-center">
