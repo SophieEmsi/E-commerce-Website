@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
-import 'tailwindcss/tailwind.css';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
 import Logo from '../components/assets/images/Logo4.png';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
-import Announcement from './Announcement'; 
-import { CartContext } from "./pages/CartContext";
+import Announcement from './Announcement';
+import { CartContext } from './pages/CartContext';
 
 const Container = styled.div`
   height: 100px;
@@ -17,18 +16,30 @@ const Container = styled.div`
   right: 0;
   background-color: #fff;
   z-index: 999;
+
+  @media (max-width: 768px) {
+    height: 80px;
+  }
 `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex: 0.5;
+  }
 `;
 
 const Language = styled.div`
@@ -42,12 +53,15 @@ const SearchContainer = styled.div`
   margin-left: 25px;
   padding: 5px;
   border-radius: 2px;
-  border: 1.5px solid #CBCBCB;
+  border: 1.5px solid #cbcBCB;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Input = styled.input`
   border: none;
-
 `;
 
 const Center = styled.div`
@@ -62,6 +76,11 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    flex: 1;
+    justify-content: center;
+  }
 `;
 
 const NavItems = styled.div`
@@ -80,12 +99,16 @@ const NavItems = styled.div`
   &:before {
     content: '';
     position: absolute;
-    background: #1E2029;
+    background: #1e2029;
     width: 0;
     height: 2px;
     bottom: -2px;
     left: 0;
     transition: 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -96,8 +119,48 @@ const CustomBadge = styled(Badge)`
   }
 `;
 
+const ToggleButton = styled.div`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-left: 25px;
+  }
+`;
+
+const DropDownMenu = styled.div`
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+
+  ${ToggleButton}:hover & {
+    display: block;
+  }
+`;
+
+const DropDownItems = styled.div`
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
 const NavBar = () => {
   const navigate = useNavigate();
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleToggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   const handleCategoryClick = (category) => {
     let apiCategory = category.toLowerCase();
@@ -121,7 +184,7 @@ const NavBar = () => {
 
   return (
     <Container>
-      <Announcement /> 
+      <Announcement />
       <Wrapper>
         <Left>
           <Language className="font-medium">EN</Language>
@@ -136,13 +199,12 @@ const NavBar = () => {
           </a>
         </Center>
         <Right>
-        <NavItems onClick={() => handleCategoryClick("WOMEN CLOTHING")} className="font-medium">
-  WOMEN CLOTHING
-</NavItems>
-<NavItems onClick={() => handleCategoryClick("MEN CLOTHING")} className="font-medium">
-  MEN CLOTHING
-</NavItems>
-
+          <NavItems onClick={() => handleCategoryClick("WOMEN CLOTHING")} className="font-medium">
+            WOMEN CLOTHING
+          </NavItems>
+          <NavItems onClick={() => handleCategoryClick("MEN CLOTHING")} className="font-medium">
+            MEN CLOTHING
+          </NavItems>
           <NavItems onClick={() => handleCategoryClick('jewelery')} className="font-medium">
             JEWELLERY
           </NavItems>
@@ -151,11 +213,31 @@ const NavBar = () => {
           </NavItems>
           <NavItems href="/cart" onClick={handleCartClick} className="mr-4">
             <CustomBadge color="secondary" badgeContent={cartItems.length} showZero>
-            <ShoppingCartIcon />
+              <ShoppingCartIcon />
             </CustomBadge>
-
-              
           </NavItems>
+          <ToggleButton onClick={handleToggleMenu}>
+            <SearchIcon />
+          </ToggleButton>
+          {showMenu && (
+            <DropDownMenu>
+              <DropDownItems onClick={() => handleCategoryClick("WOMEN CLOTHING")}>
+                WOMEN CLOTHING
+              </DropDownItems>
+              <DropDownItems onClick={() => handleCategoryClick("MEN CLOTHING")}>
+                MEN CLOTHING
+              </DropDownItems>
+              <DropDownItems onClick={() => handleCategoryClick('jewelery')}>
+                JEWELLERY
+              </DropDownItems>
+              <DropDownItems onClick={() => handleCategoryClick('electronics')}>
+                ELECTRONICS
+              </DropDownItems>
+              <DropDownItems onClick={handleCartClick}>
+                CART ({cartItems.length})
+              </DropDownItems>
+            </DropDownMenu>
+          )}
         </Right>
       </Wrapper>
     </Container>
