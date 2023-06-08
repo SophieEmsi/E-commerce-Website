@@ -47,7 +47,7 @@ The homepage of the website has a navbar with links to each shopping department.
 ![Homepage screenshot](https://i.postimg.cc/sxvCGmL4/Homepage-1.png)
 
 The results page displays the products in cards, with the imagery, title and price clearly displayed. An 'add to cart' button adds interactivity to the page and products will be added to the shopping cart page. The figure will increase in the navbar cart icon according to how many items are added.
-![Results page](https://i.postimg.cc/vZrCw2D1/Resultspage.png)
+![Results page](https://i.postimg.cc/s2tRGqSf/Resultspage-1.png)
 
 The shopping cart page displays the correct items that have been added to the shopping cart via the button on the results page. The images and product prices are displayed and the total will increase accordingly. The quantities can  be increased via the plus and minus buttons. The shipping charges are also added to the total amount displayed. 
 ![Shopping Cart page](https://i.postimg.cc/kGkMzYG1/Shoppingcart.png)
