@@ -11,6 +11,7 @@ const Container = styled.div`
   margin-top: 120px;
   margin-left: 30px;
   margin-right: 30px;
+  margin-bottom: 25px;
 `;
 
 const Wrapper = styled.div`
