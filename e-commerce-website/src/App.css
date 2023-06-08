@@ -73,20 +73,25 @@
   right: 0;
   height: calc(100% - 2px);
   width: 100px;
-  border: none;
   border-radius: 60px;
   outline: none;
   margin: 1px;
   padding: 0 20px;
   cursor: pointer;
-  background: #000 ;
-  color: #FFFFFF;
+  border: 2px solid #e0ff00;
+  background:rgba(224, 255, 0, 0.71);
+  color: black;
   transition: width .35s ease-in-out ;
+  text-align: center;
+  font-weight: 500;
+}
+.subscription .submit-email:hover {
+  background-color: #e0ff00;
 }
 
 .subscription.done .submit-email {
   width: calc(100% - 2px);
-  background: #ebf355;
+  background: #e0ff00;
   color: #000;
 }
 

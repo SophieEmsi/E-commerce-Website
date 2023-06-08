@@ -26,7 +26,7 @@ const SubscriptionForm = () => {
           <div className="mt-4 content">
             <form className="subscription" ref={subscribeButton}>
               <input className="add-email" type="email" placeholder="Enter email address" />
-              <button className="submit-email hover:bg-gray-800" type="button" onClick={subscribeHandler}>
+              <button className="submit-email" type="button" onClick={subscribeHandler}>
                 <span className="before-submit text-base">Subscribe</span>
                 <span className="after-submit text-base">Thank you for subscribing!</span>
               </button>
