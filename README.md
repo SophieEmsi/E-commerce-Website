@@ -36,3 +36,8 @@ We are excited to present the Fake Store E-Commerce Website, aiming to deliver a
 * MUI Material Icons
 * Font Awesome
 * Bootstrap
+
+## WireFrame Examples developed in Figma
+
+![Alt text](e-commerce-website/src/components/assets/images/Figma%20Home.png)
+![Alt text](e-commerce-website/src/components/assets/images/Figma%20Results.png)
