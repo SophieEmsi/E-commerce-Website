@@ -45,3 +45,6 @@ We are excited to present the Fake Store E-Commerce Website, aiming to deliver a
 ## Website Usage
 The homepage of the website has a navbar with links to each shopping department. A imagery scrollbar with promotional offers which changes automatically every 5 seconds. A company statistics bar of information and icons. A collections bar with imagery and links to the shopping departments. An email subscription bar. A footer bar with links to contact information and social media links.
 ![Homepage screenshot](https://i.postimg.cc/K8xmdMQ5/Homepage.png)
+
+The results page displays the products in cards, with the imagery, title and price clearly displayed. An 'add to cart' button adds interactivity to the page and products will be added to the shopping cart page. The figure will increase in the navbar cart icon according to how many items are added.
+![Results page](https://i.postimg.cc/vZrCw2D1/Resultspage.png)
