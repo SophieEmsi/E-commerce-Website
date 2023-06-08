@@ -52,6 +52,12 @@ The results page displays the products in cards, with the imagery, title and pri
 The shopping cart page displays the correct items that have been added to the shopping cart via the button on the results page. The images and product prices are displayed and the total will increase accordingly. The quantities can  be increased via the plus and minus buttons. The shipping charges are also added to the total amount displayed. 
 ![Shopping Cart page](https://i.postimg.cc/kGkMzYG1/Shoppingcart.png)
 
+## Links
+
+https://github.com/AsmaH5/E-commerce-Website
+
+
+
 ## Acknowledgments
 * [React](https://react.dev/)
 * [Tailwindcss](https://tailwindcss.com/)
