@@ -39,5 +39,5 @@ We are excited to present the Fake Store E-Commerce Website, aiming to deliver a
 
 ## WireFrame Examples developed in Figma
 
-![Alt text](e-commerce-website/src/components/assets/images/Figma%20Home.png)
-![Alt text](e-commerce-website/src/components/assets/images/Figma%20Results.png)
+![Figma Home](https://i.postimg.cc/GhPMS84r/Figma-Home.png)
+![Figma Results](https://i.postimg.cc/NjWQJH3b/Figma-Results.png)
