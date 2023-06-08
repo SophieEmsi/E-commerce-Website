@@ -51,3 +51,19 @@ The results page displays the products in cards, with the imagery, title and pri
 
 The shopping cart page displays the correct items that have been added to the shopping cart via the button on the results page. The images and product prices are displayed and the total will increase accordingly. The quantities can  be increased via the plus and minus buttons. The shipping charges are also added to the total amount displayed. 
 ![Shopping Cart page](https://i.postimg.cc/kGkMzYG1/Shoppingcart.png)
+
+## Acknowledgments
+* [React] (https://react.dev/)
+* [Tailwind css] (https://tailwindcss.com/)
+* [Tailwind UI] (https://tailwindui.com/)
+* [MUI] (https://mui.com/material-ui/material-icons/)
+* [Font Awesome] (https://fontawesome.com/)
+* [W3 schools](https://www.w3schools.com)
+* [Mdn Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [stack overflow](https://stackoverflow.com/)
+* [Figma](https://www.figma.com)
+* [Bootstrap](https://getbootstrap.com/)
+* [unsplash](https://unsplash.com/photos/hgGplX3PFBg)
+* [Material Design](https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors)
+* [Insomnia](https://insomnia.rest/)
+
