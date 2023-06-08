@@ -41,3 +41,7 @@ We are excited to present the Fake Store E-Commerce Website, aiming to deliver a
 
 ![Figma Home](https://i.postimg.cc/GhPMS84r/Figma-Home.png)
 ![Figma Results](https://i.postimg.cc/NjWQJH3b/Figma-Results.png)
+
+## Website Usage
+The homepage of the website has a navbar with links to each shopping department. A imagery scrollbar with promotional offers which changes automatically every 5 seconds. A company statistics bar of information and icons. A collections bar with imagery and links to the shopping departments. An email subscription bar. A footer bar with links to contact information and social media links.
+![Homepage screenshot](https://i.postimg.cc/K8xmdMQ5/Homepage.png)
