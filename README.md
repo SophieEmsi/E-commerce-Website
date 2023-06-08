@@ -24,3 +24,15 @@ Throughout the development process, we focused on creating an intuitive and visu
 The Fake Store E-Commerce Website project provided us with valuable learning experiences in web development using React, Javascript and API integration. We acquired a deeper understanding of front-end technologies and how to leverage external APIs to enrich website functionality. Working collaboratively, we overcame the challenges of remote project development through effective communication and code management practices.
 
 We are excited to present the Fake Store E-Commerce Website, aiming to deliver an immersive and enjoyable online shopping experience for users.
+
+## Built with:
+* HTML
+* CSS
+* React 
+* Javascript
+* Fakestore API
+* Tailwind UI
+* Tailwind CSS
+* MUI Material Icons
+* Font Awesome
+* Bootstrap
