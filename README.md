@@ -53,11 +53,11 @@ The shopping cart page displays the correct items that have been added to the sh
 ![Shopping Cart page](https://i.postimg.cc/kGkMzYG1/Shoppingcart.png)
 
 ## Acknowledgments
-* [React] (https://react.dev/)
-* [Tailwindcss] (https://tailwindcss.com/)
-* [TailwindUI] (https://tailwindui.com/)
-* [MUI] (https://mui.com/material-ui/material-icons/)
-* [FontAwesome] (https://fontawesome.com/)
+* [React](https://react.dev/)
+* [Tailwindcss](https://tailwindcss.com/)
+* [TailwindUI](https://tailwindui.com/)
+* [MUI](https://mui.com/material-ui/material-icons/)
+* [FontAwesome](https://fontawesome.com/)
 * [W3 schools](https://www.w3schools.com)
 * [Mdn Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [stack overflow](https://stackoverflow.com/)
