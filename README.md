@@ -54,7 +54,6 @@ The shopping cart page displays the correct items that have been added to the sh
 
 ## Links
 
-https://github.com/AsmaH5/E-commerce-Website
 https://levelsecommerce.netlify.app/
 
 
